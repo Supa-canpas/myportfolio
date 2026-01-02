@@ -3,7 +3,7 @@ import SidebarLinks from "./SidebarLinks";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="scroll-mt-14 pt-12 pb-20">
+    <section id="about" className="scroll-mt-14 pt-12 pb-8">
       <div className="max-w-5xl mx-auto px-4">
         <div className="grid gap-4 md:gap-8 md:grid-cols-[150px_2fr_150px]">
           <div className="relative flex items-center justify-center md:flex-col md:items-start md:justify-start md:gap-4">
