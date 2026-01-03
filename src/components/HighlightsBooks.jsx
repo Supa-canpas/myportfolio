@@ -9,11 +9,11 @@ import mcc from "../assets/mcc.png";
 
 const books = [
   { title: "ヒマップ(ハッカソン企業賞)", image: himap, ribbon: "Hackathon Win" },
-  { title: "UVミエルノ（ハッカソン優勝)", image: uvmierno, sideLabel: "Hackathon Win" },
-  { title: "ツナゲート（長期インターン)", image:tunagate, sideLabel: "Hackathon Win" },
-  { title: "ポートフォリオ", image:portfolio, sideLabel: "Hackathon Win" },
-  { title: "応用情報技術者", image:ap, sideLabel: "Hackathon Win" },
-  { title: "MCC広報(サークル)", image:mcc, sideLabel: "Hackathon Win" },
+  { title: "UVミエルノ（ハッカソン優勝)", image: uvmierno, ribbon: "Hackathon Win" },
+  { title: "ツナゲート（長期インターン)", image:tunagate, ribbon: "Hackathon Win" },
+  { title: "ポートフォリオ", image:portfolio, ribbon: "Hackathon Win" },
+  { title: "応用情報技術者", image:ap, ribbon: "Hackathon Win" },
+  { title: "MCC広報(サークル)", image:mcc, ribbon: "Hackathon Win" },
 ];
 
 export default function HighlightsBooks() {
@@ -22,7 +22,10 @@ export default function HighlightsBooks() {
   return (
     <section id="highlights" className="pt-6 pb-20">
       <div className="max-w-2xl mx-auto px-2">
-        <h2 className="text-xl md:text-2xl font-semibold mb-6">Highlights</h2>
+        <div className="flex items-center gap-3 mb-6">
+          <div className="h-12 w-[3px] bg-[#EA5550]" />
+          <h2 className="text-xl md:text-2xl font-semibold">Highlights</h2>
+        </div>
 
         <div className="relative">
           <div className="absolute left-0 top-0 h-full w-[2px] bg-[#EA5550]/70" />
@@ -65,7 +68,7 @@ export default function HighlightsBooks() {
 
                 {book.ribbon ? (
                   <div className="absolute bottom-0 left-0 w-full bg-[#EA5550] py-1.5 text-center text-xs font-semibold text-white">
-                    {book.ribbon}
+                    {book.title}
                   </div>
                 ) : null}
               </article>
