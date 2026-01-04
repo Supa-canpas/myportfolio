@@ -35,9 +35,6 @@ export default function AboutSection() {
             </p>
           </div>
 
-          {/* <div className="hidden md:block">
-            <SidebarLinks />
-          </div> */}
         </div>
       </div>
     </section>
