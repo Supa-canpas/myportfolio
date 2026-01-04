@@ -1,26 +1,12 @@
 import { useState } from "react";
 import HighlightModal from "./HighlightModal";
-import uvmierno from "../assets/uvmierno.png";
-import himap from "../assets/himap.png";
-import tunagate from "../assets/tunagate.png";
-import portfolio from "../assets/portfolio.png";
-import ap from "../assets/ap.png";
-import mcc from "../assets/mcc.png";
-
-const books = [
-  { title: "ヒマップ(ハッカソン企業賞)", image: himap, ribbon: "Hackathon Win" },
-  { title: "UVミエルノ（ハッカソン優勝)", image: uvmierno, ribbon: "Hackathon Win" },
-  { title: "ツナゲート（長期インターン)", image:tunagate, ribbon: "Hackathon Win" },
-  { title: "ポートフォリオ", image:portfolio, ribbon: "Hackathon Win" },
-  { title: "応用情報技術者", image:ap, ribbon: "Hackathon Win" },
-  { title: "MCC広報(サークル)", image:mcc, ribbon: "Hackathon Win" },
-];
+import { highlights } from "./highlightsData";
 
 export default function HighlightsBooks() {
   const [activeBook, setActiveBook] = useState(null);
 
   return (
-    <section id="highlights" className="pt-6 pb-20">
+    <section id="highlights" className="scroll-mt-16 pt-6 pb-20">
       <div className="max-w-2xl mx-auto px-2">
         <div className="flex items-center gap-3 mb-6">
           <div className="h-12 w-[3px] bg-[#EA5550]" />
@@ -32,10 +18,18 @@ export default function HighlightsBooks() {
           <div className="absolute right-0 top-0 h-full w-[2px] bg-[#EA5550]/70" />
 
           <div className="grid gap-3 px-2 grid-cols-2 md:grid-cols-3">
-            {books.map((book, index) => (
+            {highlights.map((book, index) => {
+              const titleText = book.subtitle
+                ? `${book.title}(${book.subtitle})`
+                : book.title;
+              return (
               <article
-                key={`${book.title}-${index}`}
-                className="group relative aspect-[2/3] scale-95 md:scale-100 cursor-pointer overflow-hidden bg-[#6a6a6a] shadow-[0_6px_18px_rgba(0,0,0,0.3)]"
+                key={book.id || `${book.title}-${index}`}
+                className={`group relative aspect-[2/3] scale-95 md:scale-100 cursor-pointer overflow-hidden bg-[#6a6a6a] shadow-[0_6px_18px_rgba(0,0,0,0.3)] ${
+                  book.featured
+                    ? "ring-1 ring-[#EA5550]/60 shadow-[0_0_18px_rgba(234,85,80,0.35)]"
+                    : ""
+                }`}
                 onClick={() => setActiveBook(book)}
                 onKeyDown={(event) => {
                   if (event.key === "Enter") {
@@ -45,10 +39,15 @@ export default function HighlightsBooks() {
                 tabIndex={0}
                 aria-haspopup="dialog"
               >
+                {book.featured ? (
+                  <div className="absolute left-2 top-2 rounded-full border border-[#EA5550]/50 bg-black/60 px-2 py-0.5 text-[10px] font-semibold text-[#EA5550]">
+                    代表作
+                  </div>
+                ) : null}
                 {book.image ? (
                   <img
                     src={book.image}
-                    alt={book.title}
+                    alt={titleText}
                     className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 ) : (
@@ -68,11 +67,15 @@ export default function HighlightsBooks() {
 
                 {book.ribbon ? (
                   <div className="absolute bottom-0 left-0 w-full bg-[#EA5550] py-1.5 text-center text-xs font-semibold text-white">
-                    {book.title}
+                    <span>{book.title}</span>
+                    {book.subtitle ? (
+                      <span className="ml-1 inline">({book.subtitle})</span>
+                    ) : null}
                   </div>
                 ) : null}
               </article>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>
