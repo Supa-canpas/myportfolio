@@ -17,8 +17,8 @@ export const highlights = [
     sideLabel: "企業賞",
     featured: false,
     details: {
-      date: "2023/11",
-      technologies: ["React Native", "Expo", "Firebase"],
+      date: "2025/09",
+      technologies: ["React Native", "Expo", "Supabase"],
       platform: "Mobile",
       links: [{ label: "Presentation", href: "#" }],
       description:
@@ -36,7 +36,7 @@ export const highlights = [
     sideLabel: "優勝",
     featured: true,
     details: {
-      date: "2024/02",
+      date: "2025/09",
       technologies: ["React Native", "IoT", "Supabase"],
       platform: "Mobile",
       links: [{ label: "Presentation", href: "#" }],
@@ -54,7 +54,7 @@ export const highlights = [
     ribbon: true,
     sideLabel: "インターン",
     details: {
-      date: "2024/06",
+      date: "2025/10",
       technologies: ["React Native", "Rails"],
       platform: "Mobile",
       links: [{ label: "Product Page", href: "#" }],
@@ -73,7 +73,7 @@ export const highlights = [
     sideLabel: "代表作",
     featured: false,
     details: {
-      date: "2024/10",
+      date: "2026/01",
       technologies: ["React", "Vite", "TailwindCSS"],
       platform: "Web",
       links: [{ label: "Site", href: "#" }],
@@ -91,7 +91,7 @@ export const highlights = [
     ribbon: true,
     sideLabel: "資格",
     details: {
-      date: "2023/10",
+      date: "2025/07",
       technologies: ["情報処理", "基礎知識"],
       platform: "Exam",
       links: [],
@@ -109,8 +109,8 @@ export const highlights = [
     ribbon: true,
     sideLabel: "サークル",
     details: {
-      date: "2023/05",
-      technologies: ["Illustrator", "Canva"],
+      date: "2023/04",
+      technologies: ["SNS運用"],
       platform: "Design",
       links: [],
       description:
