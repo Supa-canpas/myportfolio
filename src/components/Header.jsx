@@ -23,7 +23,7 @@ export default function Header() {
             <a className="hover:text-[#EA5550] transition" href="#contact">Contact</a>
             </nav>
 
-            <a className="text-sm px-3 py-1.5 rounded-full bg-white/5 hover:bg-[#EA5550]/10 hover:text-[#EA5550] border border-[#EA5550]/10 text-white/90 transition" href="#contact">定期便</a>
+            <a className="text-sm px-3 py-1.5 rounded-full bg-white/5 hover:bg-[#EA5550]/10 hover:text-[#EA5550] border border-[#EA5550]/10 text-white/90 transition" href="#contact">定期便!</a>
         </div>
     </header>
   );
